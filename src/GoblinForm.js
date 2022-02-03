@@ -41,7 +41,7 @@ export default function GoblinForm({
         <label>
             HP
           {/* onChange, use the prop setGoblinFormHP to set the parent state */}
-          <input required type="number" value={goblinFormHp} />
+          <input onChange={e => setGoblinFormHp(e.target.value)} required type="number" value={goblinFormHp} />
           {/* note that we're controlling the input's value from parent state */}
         </label>
         <label>
