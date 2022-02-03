@@ -41,13 +41,13 @@ export default function GoblinForm({
         <label>
             HP
           {/* onChange, use the prop setGoblinFormHP to set the parent state */}
-          <input onChange={e => setGoblinFormHp(e.target.value)} required type="number" value={goblinFormHp} />
+          <input onChange={e => setGoblinFormHp(e.target.value)} type="number" value={goblinFormHp} />
           {/* note that we're controlling the input's value from parent state */}
         </label>
         <label>
             Color
           {/* onChange, use the prop setGoblinFormColor to set the parent state */}
-          <select required value={goblinFormColor}>
+          <select onChange={e => setGoblinFormColor(e.target.value)} required value={goblinFormColor}>
             {/* note that we're controlling the input's value from parent state */}
             <option value="lightgreen">Green</option>
             <option value="lightblue">Blue</option>
