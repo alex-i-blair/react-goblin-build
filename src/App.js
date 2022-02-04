@@ -9,7 +9,6 @@ function App() {
 
   const [allGoblins, setAllGoblins] = useState([]);
   const [filteredGoblins, setFilteredGoblins] = useState([]);
-  const [filter, setFilter] = useState('');
 
   const {
     goblinFormName, setGoblinFormName,
