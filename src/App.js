@@ -28,7 +28,16 @@ function App() {
   
   function submitGoblin(e) {
     e.preventDefault();
-    const updatedGoblins = [...allGoblins, e];
+    const newGoblin = {
+      color: goblinFormColor,
+      hp: goblinFormHp,
+      name: goblinFormName,
+      id: Math.random()
+    };
+    setGoblinFormName('');
+    setGoblinFormHp('');
+    setGoblinFormColor('orange');
+    const updatedGoblins = [...allGoblins, newGoblin];
     setAllGoblins(updatedGoblins);
     // on submit, make a new goblin object with a random id, a name that comes from the form state, an hp that comes from the form state, and a color that comes from the form state
 
@@ -103,7 +112,11 @@ function App() {
         */
       />
       <GoblinList 
-        goblins={[]} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
+        goblins={
+          filteredGoblins.length
+            ? filteredGoblins
+            : allGoblins
+        } // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
         handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
       />
     </div>
